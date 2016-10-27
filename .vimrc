@@ -31,7 +31,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tpope/vim-markdown'
 
 	" ## Other Tools
-	Plug 'https://github.com/sirtaj/vim-openscad'	" OpenSCAD syntax hilighting
 	Plug 'vim-airline/vim-airline'					" Airline bar
 	Plug 'scrooloose/syntastic'						" syntax info
 	Plug 'Raimondi/delimitmate'						" smart completion of delimiters
