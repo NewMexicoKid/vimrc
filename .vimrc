@@ -57,3 +57,16 @@ syntax enable			" I have no idea what this actually does
 set background=dark
 set t_Co=256			" 256 colors, terrible for most themes, but best for Tomorrow-Night
 colorscheme Tomorrow-Night-Bright
+
+" function MarkdownLevel()
+"    let h = matchstr(getline(v:lnum), '^#\+') 
+"    if empty(h) 
+"       return "=" 
+"    else 
+"       return ">" . len(h) 
+"    endif 
+" endfunction
+" au BufEnter *.md setlocal foldexpr=MarkdownLevel()
+" au BufEnter *.md setlocal foldmethod=expr
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+vnoremap <Space> zf
