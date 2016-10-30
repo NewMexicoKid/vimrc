@@ -19,12 +19,14 @@ set formatoptions+=l			" Black magic
 set expandtab 
 " shiftwidth
 set shiftwidth=4
+set spell                       " Turn spelling on
 
 " # Install Plugins
 call plug#begin('~/.vim/plugged')
 	" ## Themes
 	Plug 'https://github.com/chriskempson/vim-tomorrow-theme'
 	Plug 'vim-airline/vim-airline-themes'
+    Plug 'alessandroyorba/despacio'
 
 	" ## Markdown
 	Plug 'nelstrom/vim-markdown-folding'
@@ -54,8 +56,10 @@ let g:airline#extensions#wordcount#enabled = 1
 syntax on
 syntax enable			" I have no idea what this actually does
 set background=dark
-set t_Co=256			" 256 colors, terrible for most themes, but best for Tomorrow-Night
-colorscheme Tomorrow-Night-Bright
+" set t_Co=256			" 256 colors, terrible for most themes, but best for Tomorrow-Night
+" colorscheme Tomorrow-Night-Bright
+let g:despacio_Campfire = 1
+colorscheme despacio
 
 " function MarkdownLevel()
 "    let h = matchstr(getline(v:lnum), '^#\+') 
