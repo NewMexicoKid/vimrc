@@ -19,6 +19,7 @@ set formatoptions+=l			" Black magic
 set expandtab 
 " shiftwidth
 set shiftwidth=4
+let mapleader=","
 
 " # Install Plugins
 call plug#begin('~/.vim/plugged')
@@ -35,6 +36,9 @@ call plug#begin('~/.vim/plugged')
 	Plug 'vim-airline/vim-airline'					" Airline bar
 	Plug 'scrooloose/syntastic'						" syntax info
 	Plug 'Raimondi/delimitmate'						" smart completion of delimiters
+
+    Plug 'vitalk/vim-simple-todo'
+
 call plug#end()
 
 " # Plugin Settings
