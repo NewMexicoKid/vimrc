@@ -20,19 +20,20 @@ set expandtab
 " shiftwidth
 set shiftwidth=4
 let mapleader=","
+set spell                       " Turn spelling on
 
 " # Install Plugins
 call plug#begin('~/.vim/plugged')
 	" ## Themes
 	Plug 'https://github.com/chriskempson/vim-tomorrow-theme'
 	Plug 'vim-airline/vim-airline-themes'
+    Plug 'alessandroyorba/despacio'
 
 	" ## Markdown
 	Plug 'nelstrom/vim-markdown-folding'
 	Plug 'tpope/vim-markdown'
 
 	" ## Other Tools
-	Plug 'https://github.com/sirtaj/vim-openscad'	" OpenSCAD syntax hilighting
 	Plug 'vim-airline/vim-airline'					" Airline bar
 	Plug 'scrooloose/syntastic'						" syntax info
 	Plug 'Raimondi/delimitmate'						" smart completion of delimiters
@@ -59,8 +60,10 @@ let g:airline#extensions#wordcount#enabled = 1
 syntax on
 syntax enable			" I have no idea what this actually does
 set background=dark
-set t_Co=256			" 256 colors, terrible for most themes, but best for Tomorrow-Night
-colorscheme Tomorrow-Night-Bright
+" set t_Co=256			" 256 colors, terrible for most themes, but best for Tomorrow-Night
+" colorscheme Tomorrow-Night-Bright
+let g:despacio_Campfire = 1
+colorscheme despacio
 
 " function MarkdownLevel()
 "    let h = matchstr(getline(v:lnum), '^#\+') 
