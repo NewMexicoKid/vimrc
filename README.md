@@ -36,3 +36,7 @@ This will install the plugins, including the Tomorrow Night colorscheme.
 
 ## References
 Be sure to see the wonderful [airline](https://github.com/vim-airline/vim-airline) status bar page--there are many, many configuration options. You can also do a **:help airline** when within vim to see the documentation.
+
+## Use Windows?
+* If you happen to have to use Windows, [this guide is very helpful for making vim plugins work there](https://www.vim.org/ugrankar.pdf)
+* Note: I had to [use vundle](https://github.com/VundleVim/Vundle.vim/wiki/Vundle-for-Windows) as described in the guide. Didn't try to make things work with Plug since I was in a hurry. Went through the [vundle quick start](https://github.com/VundleVim/Vundle.vim#quick-start) after doing the steps in the guide above bullet (installed vim in my Windows users directory, cleaned up vimfiles, installed [curl](https://curl.haxx.se/download.html#Win64), tested it with pathogen, etc).
