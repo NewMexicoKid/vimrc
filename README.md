@@ -9,7 +9,7 @@ I use this under ubuntu Linux and on Windows 7 via [cygwin](https://www.cygwin.c
 
 ### Themes
 * [Plug 'https://github.com/chriskempson/vim-tomorrow-theme'](https://github.com/chriskempson/vim-tomorrow-theme)
-* [Plug 'vim-airline/vim-airline-themes'](https://github.com/vim-airline/vim-airline-themes)
+* -[Plug 'vim-airline/vim-airline-themes'](https://github.com/vim-airline/vim-airline-themes)-
 * [Plug 'alessandroyorba/despacio'](https://github.com/AlessandroYorba/Despacio)
     - I started out with the tomorrow theme, but I like despacio. I'll probably end up using both (depending on my mood)
 
