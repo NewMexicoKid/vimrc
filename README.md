@@ -9,7 +9,7 @@ I use this under ubuntu Linux and on Windows 7 via [cygwin](https://www.cygwin.c
 
 ### Themes
 * [Plug 'https://github.com/chriskempson/vim-tomorrow-theme'](https://github.com/chriskempson/vim-tomorrow-theme)
-* -[Plug 'vim-airline/vim-airline-themes'](https://github.com/vim-airline/vim-airline-themes)-
+* ~~[Plug 'vim-airline/vim-airline-themes'](https://github.com/vim-airline/vim-airline-themes)~~
 * [Plug 'alessandroyorba/despacio'](https://github.com/AlessandroYorba/Despacio)
     - I started out with the tomorrow theme, but I like despacio. I'll probably end up using both (depending on my mood)
 
@@ -18,7 +18,9 @@ I use this under ubuntu Linux and on Windows 7 via [cygwin](https://www.cygwin.c
 * [Plug 'tpope/vim-markdown'](https://github.com/tpope/vim-markdown)
 
 ### Other Tools
-* [Plug 'vim-airline/vim-airline'](https://github.com/vim-airline/vim-airline)	- Airline bar
+* ~~[Plug 'vim-airline/vim-airline'](https://github.com/vim-airline/vim-airline)	- Airline bar~~
+* [Plug 'itchyny/lightline.vim](from https://github.com/itchyny/lightline.vim) - status bar (lightweight) - *see [the recommendations here for how to put wordcount into the status line](https://github.com/itchyny/lightline.vim/issues/295)*
+* [Plug reeds/vim-litecorrect](https://github.com/reedes/vim-litecorrect) - lightweight spelling correction
 * [Plug 'scrooloose/syntastic'](https://github.com/scrooloose/syntastic) - syntax info
 * [Plug 'Raimondi/delimitmate'](https://github.com/Raimondi/delimitmate) - smart completion of delimiters
 * [Plug 'vitalk/vim-simple-todo'](https://github.com/vitalk/vim-simple-todo) - simple todo
@@ -39,4 +41,6 @@ Be sure to see the wonderful [airline](https://github.com/vim-airline/vim-airlin
 
 ## Use Windows?
 * If you happen to have to use Windows, [this guide is very helpful for making vim plugins work there](https://www.vim.org/ugrankar.pdf)
-* Note: I had to [use vundle](https://github.com/VundleVim/Vundle.vim/wiki/Vundle-for-Windows) as described in the guide. Didn't try to make things work with Plug since I was in a hurry. Went through the [vundle quick start](https://github.com/VundleVim/Vundle.vim#quick-start) after doing the steps in the guide above bullet (installed vim in my Windows users directory, cleaned up vimfiles, installed [curl](https://curl.haxx.se/download.html#Win64), tested it with pathogen, etc).
+* Note: I had to [use vundle](https://github.com/VundleVim/Vundle.vim/wiki/Vundle-for-Windows) as described in the guide. Didn't try to make things work with Plug since I was in a hurry. Went through the [vundle quick start](https://github.com/VundleVim/Vundle.vim#quick-start) after doing the steps in the guide above bullet (installed vim in my Windows users directory, cleaned up vimfiles, installed [curl](https://curl.haxx.se/download.html#Win64), tested it with pathogen, etc). **Update**: Plug works fine! Just had to reboot before using.
+* Note: if you have a .vimrc in your $HOME, gvim will use it ahead of a .gvimrc in that $HOME directory!
+
