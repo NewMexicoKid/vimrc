@@ -1,5 +1,9 @@
-" # Basic Settings
-set nocompatible				" vim-specific settings, non-vi-compatible
+" --------------------------------------------------------
+" See https://github.com/NewMexicoKid/vimrc for the source
+" --------------------------------------------------------
+"
+set nocompatible                " be iMproved, required
+filetype off                    " required
 set backspace=indent,eol,start 	" Allow backspace in insert mode
 "set number						" Line numbers
 set hidden						" Allow hidden buffers
@@ -22,48 +26,85 @@ set shiftwidth=4
 let mapleader=","
 set spell                       " Turn spelling on
 
-" # Install Plugins
-call plug#begin('~/.vim/plugged')
-	" ## Themes
-	Plug 'https://github.com/chriskempson/vim-tomorrow-theme'
-	Plug 'vim-airline/vim-airline-themes'
-    Plug 'alessandroyorba/despacio'
+call plug#begin()
+" call plug#begin('~/.vim/plugged')
 
-	" ## Markdown
-	Plug 'nelstrom/vim-markdown-folding'
-	Plug 'tpope/vim-markdown'
+" plugin on GitHub repo
+Plug 'tpope/vim-fugitive'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
+" ## Themes
+Plug 'chriskempson/vim-tomorrow-theme'
+" Plug 'vim-airline/vim-airline-themes'
+Plug 'alessandroyorba/despacio'
+Plug 'flazz/vim-colorschemes'
+Plug 'rafi/awesome-vim-colorschemes'
 
-	" ## Other Tools
-	Plug 'vim-airline/vim-airline'					" Airline bar
-	Plug 'scrooloose/syntastic'						" syntax info
-	Plug 'Raimondi/delimitmate'						" smart completion of delimiters
+" ## Markdown
+Plug 'nelstrom/vim-markdown-folding'
+Plug 'tpope/vim-markdown'
 
-    Plug 'vitalk/vim-simple-todo'
+" ## Other Tools
+Plug 'itchyny/lightline.vim' " from https://github.com/itchyny/lightline.vim
+Plug 'scrooloose/syntastic'	" syntax info
+Plug 'Raimondi/delimitmate'	" smart completion of delimiters
+Plug 'vitalk/vim-simple-todo'
+Plug 'reedes/vim-litecorrect' " autocorrect - https://github.com/reedes/vim-litecorrect
 
+" All of your Plugins must be added before the following line
 call plug#end()
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PlugList       - lists configured plugins
+" :PlugInstall    - installs plugins; append `!` to update or just :PlugUpdate
+" :PlugSearch foo - searches for foo; append `!` to refresh local cache
+" :PlugClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" Put your non-Plugin stuff after this line
+augroup litecorrect
+  autocmd!
+  autocmd FileType markdown,mkd,md call litecorrect#init()
+augroup END
 
 " # Plugin Settings
 set laststatus=2		" Make airline status bar appear all the time
 set foldenable			" Enable markdown folding
-let g:airline#extensions#wordcount#enabled = 1	"Show word count
+" let g:airline#extensions#wordcount#enabled = 1	"Show word count
 " Get rid of pointless Airline separators because I don't want to install a
 " patched font to make them look right
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-let g:airline#extensions#wordcount#enabled = 1
+" let g:airline_left_sep=''
+" let g:airline_right_sep=''
 " Remove existing autocommands to avoid duplicates
 :autocmd!
 " Force Airline to refresh after setup so settings work
-:autocmd VimEnter * :AirlineRefresh
+" ":autocmd VimEnter * :AirlineRefresh
 
 " # Color Scheme
 syntax on
 syntax enable			" I have no idea what this actually does
 set background=dark
-" set t_Co=256			" 256 colors, terrible for most themes, but best for Tomorrow-Night
-" colorscheme Tomorrow-Night-Bright
-let g:despacio_Campfire = 1
-colorscheme despacio
+if !has('gui_running')
+    set t_Co=256			" 256 colors, terrible for most themes, but best for Tomorrow-Night
+    set guifont=Consolas:h12:cANSI
+endif
+colorscheme Tomorrow-Night-Bright
+" let g:despacio_Campfire = 1
+" colorscheme despacio
+" colorscheme minimalist
+
+" lightline with wordcount - https://github.com/itchyny/lightline.vim/issues/295
+let g:lightline = {
+      \ 'active': {
+      \   'right': [ [ 'lineinfo' ], [ 'percent', 'wordcount' ], [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \ },
+      \ 'component_function': {
+      \   'wordcount': 'WordCount',
+      \ },
+      \ }
 
 " function MarkdownLevel()
 "    let h = matchstr(getline(v:lnum), '^#\+') 
@@ -77,3 +118,5 @@ colorscheme despacio
 " au BufEnter *.md setlocal foldmethod=expr
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
+
+
