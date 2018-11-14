@@ -116,7 +116,42 @@ let g:lightline = {
 " endfunction
 " au BufEnter *.md setlocal foldexpr=MarkdownLevel()
 " au BufEnter *.md setlocal foldmethod=expr
+" I no longer remember why I need this:
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
 
+" Needed for my chromebook crouton instance
+" map <C-A-w> <C-w>
+map <C-e> <C-w>
 
+" Wordcount function from Pingouin (https://nanowrimo.org/participants/pingouin)
+function! WordCount()
+let s:old_status = v:statusmsg
+let position = getpos(".")
+  exe ":silent normal g\<C-g>"
+    let stat = v:statusmsg
+      let s:word_count = 0
+if stat != '--No lines in buffer--'
+     let s:word_count = str2nr(split(v:statusmsg)[11])
+         let v:statusmsg = s:old_status
+    end
+         call setpos('.', position)
+    return s:word_count 
+endfunction
+
+" ---set statusline=   " clear the statusline for when vimrc is reloaded
+" ---set statusline+=%-3.3n\                      " buffer number
+" ---set statusline+=%f\                          " file name
+" ---set statusline+=%h%m%r%w                     " flags
+" ---set statusline+=[%{strlen(&ft)?&ft:'none'},  " filetype
+" ---set statusline+=%{strlen(&fenc)?&fenc:&enc}, " encoding
+" ---set statusline+=%{&fileformat}]              " file format
+" ---set statusline+=%10.10{WordCount()}w\     " wordcount
+" ---set statusline+=%=                           " right align
+" ---set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}\  " highlight
+"set statusline+=%b,0x%-8B\                   "
+"current char
+"set statusline+=%-14.(%l,%c%V%)\ %<%P        "
+"offset
+"set noruler         " 
+"set laststatus=2    " show statusline
