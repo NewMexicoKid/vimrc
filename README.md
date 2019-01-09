@@ -3,7 +3,7 @@ This is my .vimrc, modified from [WurdBendur](http://nanowrimo.org/participants/
 
 [vim](http://vim.org) is a fantastic moded text editor. In addition to being the best editor for editing code, it can easily also be used for writing notes, prose or fiction, especially when combined with [markdown](https://daringfireball.net/projects/markdown/) (a simple mark-up language) and [pandoc](http://pandoc.org) (a multi-platform tool that can be used to convert markdown text files into many different formats, including Microsoft Word, OpenOffice/LibreOffice odt, epub, etc).
 
-I use this under ubuntu Linux and on Windows 7 via [cygwin](https://www.cygwin.com/).
+I use this under ubuntu Linux (including on ChromeOS) and on Windows 7 via [cygwin](https://www.cygwin.com/).
 
 ## Plugins I currently use
 
@@ -12,6 +12,11 @@ I use this under ubuntu Linux and on Windows 7 via [cygwin](https://www.cygwin.c
 * ~~[Plug 'vim-airline/vim-airline-themes'](https://github.com/vim-airline/vim-airline-themes)~~
 * [Plug 'alessandroyorba/despacio'](https://github.com/AlessandroYorba/Despacio)
     - I started out with the tomorrow theme, but I like despacio. I'll probably end up using both (depending on my mood)
+* See [this great overview of popular vim themes](https://blog.pabuisson.com/2018/06/favorite-color-schemes-modern-vim-neovim/)
+* [Plug 'morhetz/gruvbox'](https://github.com/morhetz/gruvbox/wiki/Installation) - my current favorite theme (as of 2019-01-09), using 
+    - let g:gruvbox_italic=1
+    - let g:gruvbox_contrast_dark='hard'
+    - colorscheme gruvbox
 
 ### Markdown
 * [Plug 'nelstrom/vim-markdown-folding'](https://github.com/nelstrom/vim-markdown-folding)
