@@ -40,12 +40,15 @@ Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'alessandroyorba/despacio'
 Plug 'flazz/vim-colorschemes'
 Plug 'rafi/awesome-vim-colorschemes'
+" https://github.com/morhetz/gruvbox/wiki/Installation
+Plug 'morhetz/gruvbox'
 
 " ## Markdown
 Plug 'nelstrom/vim-markdown-folding'
 Plug 'tpope/vim-markdown'
 
 " ## Other Tools
+" Plug 'vim-airline/vim-airline'	" Airline bar
 Plug 'itchyny/lightline.vim' " from https://github.com/itchyny/lightline.vim
 Plug 'scrooloose/syntastic'	" syntax info
 Plug 'Raimondi/delimitmate'	" smart completion of delimiters
@@ -91,7 +94,10 @@ if !has('gui_running')
     set t_Co=256			" 256 colors, terrible for most themes, but best for Tomorrow-Night
     set guifont=Consolas:h12:cANSI
 endif
-colorscheme Tomorrow-Night-Bright
+let g:gruvbox_italic=1
+let g:gruvbox_contrast_dark='hard'
+colorscheme gruvbox
+" colorscheme Tomorrow-Night-Bright
 " let g:despacio_Campfire = 1
 " colorscheme despacio
 " colorscheme minimalist
