@@ -26,17 +26,19 @@ set shiftwidth=4
 let mapleader=","
 set spell                       " Turn spelling on
 
-call plug#begin()
-" call plug#begin('~/.vim/plugged')
+" # Install Plugins
+call plug#begin('~/.vim/plugged')
 
 " plugin on GitHub repo
 Plug 'tpope/vim-fugitive'
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
+
 " ## Themes
 Plug 'chriskempson/vim-tomorrow-theme'
 " Plug 'vim-airline/vim-airline-themes'
+Plug 'mhartington/oceanic-next'
 Plug 'alessandroyorba/despacio'
 Plug 'flazz/vim-colorschemes'
 Plug 'rafi/awesome-vim-colorschemes'
@@ -49,14 +51,21 @@ Plug 'tpope/vim-markdown'
 
 " ## Other Tools
 " Plug 'vim-airline/vim-airline'	" Airline bar
+Plug 'https://github.com/sirtaj/vim-openscad'	" OpenSCAD syntax hilighting
 Plug 'itchyny/lightline.vim' " from https://github.com/itchyny/lightline.vim
 Plug 'scrooloose/syntastic'	" syntax info
 Plug 'Raimondi/delimitmate'	" smart completion of delimiters
 Plug 'vitalk/vim-simple-todo'
 Plug 'reedes/vim-litecorrect' " autocorrect - https://github.com/reedes/vim-litecorrect
 
+" Autosave taskpaper files                    
+Plug 'vim-scripts/vim-auto-save' 
+Plug 'djoshea/vim-autoread'      
+
 " All of your Plugins must be added before the following line
 call plug#end()
+autocmd filetype taskpaper let g:auto_save = 1
+autocmd filetype taskpaper :WatchForChanges!
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
@@ -81,6 +90,7 @@ set foldenable			" Enable markdown folding
 " patched font to make them look right
 " let g:airline_left_sep=''
 " let g:airline_right_sep=''
+" let g:airline#extensions#wordcount#enabled = 1
 " Remove existing autocommands to avoid duplicates
 :autocmd!
 " Force Airline to refresh after setup so settings work
@@ -98,6 +108,7 @@ let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
 " colorscheme Tomorrow-Night-Bright
+" colorscheme OceanicNext
 " let g:despacio_Campfire = 1
 " colorscheme despacio
 " colorscheme minimalist
