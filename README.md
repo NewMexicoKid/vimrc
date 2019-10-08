@@ -48,4 +48,5 @@ Be sure to see the wonderful [airline](https://github.com/vim-airline/vim-airlin
 * If you happen to have to use Windows, [this guide is very helpful for making vim plugins work there](https://www.vim.org/ugrankar.pdf)
 * Note: I had to [use vundle](https://github.com/VundleVim/Vundle.vim/wiki/Vundle-for-Windows) as described in the guide. Didn't try to make things work with Plug since I was in a hurry. Went through the [vundle quick start](https://github.com/VundleVim/Vundle.vim#quick-start) after doing the steps in the guide above bullet (installed vim in my Windows users directory, cleaned up vimfiles, installed [curl](https://curl.haxx.se/download.html#Win64), tested it with pathogen, etc). **Update**: Plug works fine! Just had to reboot before using.
 * Note: if you have a .vimrc in your $HOME, gvim will use it ahead of a .gvimrc in that $HOME directory!
+* Note: With Windows 10, I had to put plug.vim in ~/vimfiles/autoload, then everything magically worked (after installing git, making sure that the Path environment variable was updated with the path to git, and that curl.cmd worked)
 
