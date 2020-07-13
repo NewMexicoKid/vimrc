@@ -44,6 +44,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'rafi/awesome-vim-colorschemes'
 " https://github.com/morhetz/gruvbox/wiki/Installation
 Plug 'morhetz/gruvbox'
+Plug 'chuling/equinusocio-material.vim'
 
 " ## Markdown
 Plug 'nelstrom/vim-markdown-folding'
@@ -56,6 +57,7 @@ Plug 'itchyny/lightline.vim' " from https://github.com/itchyny/lightline.vim
 Plug 'scrooloose/syntastic'	" syntax info
 Plug 'Raimondi/delimitmate'	" smart completion of delimiters
 Plug 'vitalk/vim-simple-todo'
+Plug 'vuciv/vim-bujo'
 Plug 'reedes/vim-litecorrect' " autocorrect - https://github.com/reedes/vim-litecorrect
 
 " Autosave taskpaper files                    
@@ -106,7 +108,17 @@ if !has('gui_running')
 endif
 let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark='hard'
-colorscheme gruvbox
+" colorscheme gruvbox
+
+set termguicolors 
+let g:equinusocio_material_style = 'pure'
+let g:equinusocio_material_less = 50
+colorscheme equinusocio_material
+let g:airline_theme = 'equinusocio_material'
+
+highlight Normal     ctermbg=NONE guibg=NONE
+highlight LineNr     ctermbg=NONE guibg=NONE
+highlight SignColumn ctermbg=NONE guibg=NONE
 " colorscheme Tomorrow-Night-Bright
 " colorscheme OceanicNext
 " let g:despacio_Campfire = 1
@@ -172,3 +184,8 @@ endfunction
 "offset
 "set noruler         " 
 "set laststatus=2    " show statusline
+nmap <C-i> <Plug>BujoAddnormal
+imap <C-i> <Plug>BujoAddinsert
+nmap <C-j> <Plug>BujoChecknormal
+imap <C-j> <Plug>BujoCheckinsert
+let g:bujo#todo_file_path = $HOME . "/.cache/bujo"
